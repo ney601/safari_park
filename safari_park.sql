@@ -32,11 +32,18 @@ CREATE TABLE assignment (
 );
 
 
-INSERT INTO animals (name, type, age, enclosureId) VALUES ('Tony', 'Tiger', 20, 1);
-INSERT INTO animals (name, type, age, enclosureId) VALUES ('Zara', 'Zebra', 12, 2);
-INSERT INTO animals (name, type, age, enclosureId) VALUES ('Prada', 'Panda', 7, 1);
-INSERT INTO animals (name, type, age, enclosureId) VALUES ('Sniper', 'Snake', 4, 3);
-INSERT INTO animals (name, type, age, enclosureId) VALUES ('Willow', 'Woodpecker', 5, 4);
+INSERT INTO enclosure (name, capacity, closedForMaintenance) VALUES ('Frontierland', 5, true);
+INSERT INTO enclosure (name, capacity, closedForMaintenance) VALUES ('Atlantica', 8, true);
+INSERT INTO enclosure (name, capacity, closedForMaintenance) VALUES ('Jumbas_Lab', 10, true);
+INSERT INTO enclosure (name, capacity, closedForMaintenance) VALUES ('Third_Street_School', 11, false);
+INSERT INTO enclosure (name, capacity, closedForMaintenance) VALUES ('Ursulas_Fortress' 14, true);
+
+
+INSERT INTO animal (name, type, age, enclosureId) VALUES ('Tony', 'Tiger', 20, 1);
+INSERT INTO animal (name, type, age, enclosureId) VALUES ('Zara', 'Zebra', 12, 2);
+INSERT INTO animal (name, type, age, enclosureId) VALUES ('Prada', 'Panda', 7, 1);
+INSERT INTO animal (name, type, age, enclosureId) VALUES ('Sniper', 'Snake', 4, 3);
+INSERT INTO animal (name, type, age, enclosureId) VALUES ('Willow', 'Woodpecker', 5, 4);
 
 
 
