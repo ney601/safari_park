@@ -63,7 +63,7 @@ SELECT * FROM enclosure LEFT JOIN animal ON enclosure.id = animal.enclosureId;
 SELECT * FROM enclosure INNER JOIN assignment ON enclosure.id = assignment.enclosureId INNER JOIN staff ON assignment.employeeId = staff.id;
 
 -- Q3 The names of staff working in enclosures which are closed for maintenance
-
+SELECT *  FROM staff INNER JOIN assignment ON staff.id = assignment.employeeId INNER JOIN enclosure ON assignment.enclosureId = enclosure.id WHERE enclosure.closedForMaintenance = true;
 
 -- Q4 The name of the enclosure where the oldest animal lives. If there are two animals who are the same age choose the first one alphabetically.
 
