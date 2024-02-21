@@ -56,6 +56,29 @@ INSERT INTO assignment (employeeId, enclosureId, day) VALUES (2, 5, 'Wednesday')
 INSERT INTO assignment (employeeId, enclosureId, day) VALUES (5, 1, 'Friday');
 
 
+-- Q1 The names of the animals in a given enclosure
+SELECT * FROM enclosure LEFT JOIN animal ON enclosure.id = animal.enclosureId;
+
+-- Q2 The names of the staff working in a given enclosure
+
+
+-- Q3 The names of staff working in enclosures which are closed for maintenance
+
+
+-- Q4 The name of the enclosure where the oldest animal lives. If there are two animals who are the same age choose the first one alphabetically.
+
+
+-- Q5 The number of different animal types a given keeper has been assigned to work with.
+
+
+-- Q6 The number of different keepers who have been assigned to work in a given enclosure
+
+
+-- Q7 The names of the other animals sharing an enclosure with a given animal (eg. find the names of all the animals sharing the big cat field with Tony)
+
+
+
+
 
 
 
