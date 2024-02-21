@@ -8,7 +8,7 @@ CREATE TABLE animal (
     name VARCHAR(255),
     type VARCHAR(255),
     age INT,
-    enclosure_id INT REFERENCES enclosur(id)
+    enclosureId INT REFERENCES enclosure(id)
 );
 
 CREATE TABLE enclosure (
@@ -26,8 +26,8 @@ CREATE TABLE staff (
 
 CREATE TABLE assignment (
     id SERIAL PRIMARY KEY,
-    employee_id INT REFERENCES employee(id),
-    enclosure_id INT REFERENCES enclosur(id),
+    employeeId INT REFERENCES employee(id),
+    enclosureId INT REFERENCES enclosur(id),
     day VARCHAR(255)
 );
 
