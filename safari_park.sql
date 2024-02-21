@@ -6,9 +6,38 @@ DROP TABLE IF EXISTS staff;
 CREATE TABLE animal (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
-    type INT,
-    age VARCHAR(255),
+    type VARCHAR(255),
+    age INT,
     enclosure_id INT REFERENCES enclosur(id)
 );
+
+CREATE TABLE enclosure (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255),
+    capacity INT,
+    closedForMaintenance BOOLEAN
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
