@@ -32,9 +32,11 @@ CREATE TABLE assignment (
 );
 
 
-
-
-
+INSERT INTO animals (name, type, age, enclosureId) VALUES ('Tony', 'Tiger', 20, 1);
+INSERT INTO animals (name, type, age, enclosureId) VALUES ('Zara', 'Zebra', 12, 2);
+INSERT INTO animals (name, type, age, enclosureId) VALUES ('Prada', 'Panda', 7, 1);
+INSERT INTO animals (name, type, age, enclosureId) VALUES ('Sniper', 'Snake', 4, 3);
+INSERT INTO animals (name, type, age, enclosureId) VALUES ('Willow', 'Woodpecker', 5, 4);
 
 
 
