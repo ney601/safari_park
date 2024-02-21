@@ -3,19 +3,19 @@ DROP TABLE IF EXISTS animal;
 DROP TABLE IF EXISTS enclosure;
 DROP TABLE IF EXISTS staff;
 
+CREATE TABLE enclosure (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255),
+    capacity INT,
+    closedForMaintenance BOOLEAN
+);
+
 CREATE TABLE animal (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     type VARCHAR(255),
     age INT,
     enclosureId INT REFERENCES enclosure(id)
-);
-
-CREATE TABLE enclosure (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(255),
-    capacity INT,
-    closedForMaintenance BOOLEAN
 );
 
 CREATE TABLE staff (
@@ -26,7 +26,7 @@ CREATE TABLE staff (
 
 CREATE TABLE assignment (
     id SERIAL PRIMARY KEY,
-    employeeId INT REFERENCES employee(id),
+    employeeId INT REFERENCES staff(id),
     enclosureId INT REFERENCES enclosure(id),
     day VARCHAR(255)
 );
@@ -35,7 +35,7 @@ INSERT INTO enclosure (name, capacity, closedForMaintenance) VALUES ('Frontierla
 INSERT INTO enclosure (name, capacity, closedForMaintenance) VALUES ('Atlantica', 8, true);
 INSERT INTO enclosure (name, capacity, closedForMaintenance) VALUES ('Jumbas_Lab', 10, true);
 INSERT INTO enclosure (name, capacity, closedForMaintenance) VALUES ('Third_Street_School', 11, false);
-INSERT INTO enclosure (name, capacity, closedForMaintenance) VALUES ('Ursulas_Fortress' 14, true);
+INSERT INTO enclosure (name, capacity, closedForMaintenance) VALUES ('Ursulas_Fortress', 14, true);
 
 INSERT INTO animal (name, type, age, enclosureId) VALUES ('Tony', 'Tiger', 20, 1);
 INSERT INTO animal (name, type, age, enclosureId) VALUES ('Zara', 'Zebra', 12, 2);
@@ -47,7 +47,7 @@ INSERT INTO staff (name, employeeNumber) VALUES ('Colin', 1978);
 INSERT INTO staff (name, employeeNumber) VALUES ('Anna', 2002);
 INSERT INTO staff (name, employeeNumber) VALUES ('Richard', 2019);
 INSERT INTO staff (name, employeeNumber) VALUES ('Zsolt', 2023);
-INSERT INTO staff (name, employeeNumber) VALUES ('Thibyaa' 2024);
+INSERT INTO staff (name, employeeNumber) VALUES ('Thibyaa', 2024);
 
 INSERT INTO assignment (employeeId, enclosureId, day) VALUES (1, 3, 'Tuesday');
 INSERT INTO assignment (employeeId, enclosureId, day) VALUES (3, 2, 'Monday');
