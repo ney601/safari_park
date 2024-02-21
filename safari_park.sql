@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS assignment;
-DROP TABLE IF EXISTS animals;
-DROP TABLE IF EXISTS enclosures;
+DROP TABLE IF EXISTS animal;
+DROP TABLE IF EXISTS enclosure;
 DROP TABLE IF EXISTS staff;
 
 CREATE TABLE animal (
@@ -27,7 +27,7 @@ CREATE TABLE staff (
 CREATE TABLE assignment (
     id SERIAL PRIMARY KEY,
     employeeId INT REFERENCES employee(id),
-    enclosureId INT REFERENCES enclosur(id),
+    enclosureId INT REFERENCES enclosure(id),
     day VARCHAR(255)
 );
 
@@ -49,6 +49,11 @@ INSERT INTO staff (name, employeeNumber) VALUES ('Richard', 2019);
 INSERT INTO staff (name, employeeNumber) VALUES ('Zsolt', 2023);
 INSERT INTO staff (name, employeeNumber) VALUES ('Thibyaa' 2024);
 
+INSERT INTO assignment (employeeId, enclosureId, day) VALUES (1, 3, 'Tuesday');
+INSERT INTO assignment (employeeId, enclosureId, day) VALUES (3, 2, 'Monday');
+INSERT INTO assignment (employeeId, enclosureId, day) VALUES (2, 3, 'Thursday');
+INSERT INTO assignment (employeeId, enclosureId, day) VALUES (2, 5, 'Wednesday');
+INSERT INTO assignment (employeeId, enclosureId, day) VALUES (5, 1, 'Friday');
 
 
 
