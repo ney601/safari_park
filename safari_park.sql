@@ -60,7 +60,7 @@ INSERT INTO assignment (employeeId, enclosureId, day) VALUES (5, 1, 'Friday');
 SELECT * FROM enclosure LEFT JOIN animal ON enclosure.id = animal.enclosureId;
 
 -- Q2 The names of the staff working in a given enclosure
-
+SELECT * FROM enclosure INNER JOIN assignment ON enclosure.id = assignment.enclosureId INNER JOIN staff ON assignment.employeeId = staff.id;
 
 -- Q3 The names of staff working in enclosures which are closed for maintenance
 
