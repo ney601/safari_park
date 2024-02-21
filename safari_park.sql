@@ -24,6 +24,12 @@ CREATE TABLE staff (
     employeeNumber INT
 );
 
+CREATE TABLE assignment (
+    id SERIAL PRIMARY KEY,
+    employee_id INT REFERENCES employee(id),
+    enclosure_id INT REFERENCES enclosur(id),
+    day VARCHAR(255)
+);
 
 
 
