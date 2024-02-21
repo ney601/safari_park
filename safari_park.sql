@@ -18,15 +18,11 @@ CREATE TABLE enclosure (
     closedForMaintenance BOOLEAN
 );
 
-
-
-
-
-
-
-
-
-
+CREATE TABLE staff (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255),
+    employeeNumber INT
+);
 
 
 
