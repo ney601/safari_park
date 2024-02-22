@@ -69,7 +69,7 @@ SELECT DISTINCT staff.name FROM staff INNER JOIN assignment ON staff.id = assign
 SELECT * FROM enclosure INNER JOIN animal ON enclosure.id = animal.enclosureId WHERE animal.age = (SELECT MAX(AGE) FROM animal) ORDER BY animal.name ASC LIMIT 1;
 
 -- Q5 The number of different animal types a given keeper has been assigned to work with.
-SELECT COUNT(animal.type) FROM animal INNER JOIN assignment ON assignment.enclosureId = animal.enclosureId INNER JOIN staff ON assignment.employeeId = staff.id;
+SELECT COUNT(animal.type) FROM animal INNER JOIN assignment ON staff.id = assignment.employeeId INNER JOIN enclosure ON assignment.enclosureId = enclosure.id;
 
 -- Q6 The number of different keepers who have been assigned to work in a given enclosure
 
