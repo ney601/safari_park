@@ -59,13 +59,16 @@ INSERT INTO assignment (employeeId, enclosureId, day) VALUES (5, 1, 'Friday');
 -- Q1 The names of the animals in a given enclosure
 SELECT * FROM enclosure LEFT JOIN animal ON enclosure.id = animal.enclosureId;
 
+
 -- Q2 The names of the staff working in a given enclosure
 SELECT * FROM enclosure INNER JOIN assignment ON enclosure.id = assignment.enclosureId INNER JOIN staff ON assignment.employeeId = staff.id;
 
 -- Q3 The names of staff working in enclosures which are closed for maintenance
-SELECT *  FROM staff INNER JOIN assignment ON staff.id = assignment.employeeId INNER JOIN enclosure ON assignment.enclosureId = enclosure.id WHERE enclosure.closedForMaintenance = true;
+SELECT * FROM staff INNER JOIN assignment ON staff.id = assignment.employeeId INNER JOIN enclosure ON assignment.enclosureId = enclosure.id WHERE enclosure.closedForMaintenance = true;
+SELECT DISTINCT staff.name FROM staff INNER JOIN assignment ON staff.id = assignment.employeeId INNER JOIN enclosure ON assignment.enclosureId = enclosure.id WHERE enclosure.closedForMaintenance = true;
 
 -- Q4 The name of the enclosure where the oldest animal lives. If there are two animals who are the same age choose the first one alphabetically.
+SELECT * FROM enclosure
 
 
 -- Q5 The number of different animal types a given keeper has been assigned to work with.
